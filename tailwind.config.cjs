@@ -12,11 +12,14 @@ module.exports = {
       'light-secondary-text': '#313134',
       'light-gray': '#424245',
       'light-elements': '#F0F2F4',
+      'light-ref-icons': '#934E84',
       'dark-background': '#151F2C',
       'dark-primary-text': '#FDFDFD',
       'dark-secondary-text': '#C5CBD3',
       'dark-gray': '202023',
-      'dark-elements': '#424B57'
+      'dark-elements': '#424B57',
+      'dark-ref-icons': '#F2BE2D',
+      'test': 'red'
     },
     fontFamily: {
       main: ['Source Sans Pro', 'sans-serif'],

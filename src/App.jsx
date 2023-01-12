@@ -4,7 +4,7 @@ import Main from './components/Main'
 const App = () => {
 
   return (
-    <div className='w-full min-h-screen font-main'>
+    <div className='w-full min-h-screen bg-light-background font-main'>
       <div className='container mx-auto'>
         <Header />
         <Main />

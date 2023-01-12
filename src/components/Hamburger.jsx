@@ -10,7 +10,7 @@ const Hamburger = () => {
 
     return (
         <div
-            className='flex justify-center items-center absolute top-3 left-3 text-2xl text-light-primary-text sm:invisible'
+            className='flex justify-center items-center absolute top-5 left-3 text-2xl text-light-primary-text sm:invisible'
             style={{
                 width: '24px',
                 height: '21px'
