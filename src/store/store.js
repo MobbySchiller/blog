@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import hamburgerSlice from './hamburgerSlice'
 
 export default configureStore({
-  reducer: {},
+  reducer: {
+    hamburger: hamburgerSlice.reducer
+  },
 })

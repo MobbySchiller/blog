@@ -1,11 +1,15 @@
-
+import Header from './components/Header'
+import Main from './components/Main'
 
 const App = () => {
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className='w-full min-h-screen font-main'>
+      <div className='container mx-auto'>
+        <Header />
+        <Main />
+      </div>
+    </div >
   )
 }
 
