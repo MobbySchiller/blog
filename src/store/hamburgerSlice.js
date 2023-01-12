@@ -9,7 +9,6 @@ const hamburgerSlice = createSlice({
         change: (state) => {
             const { navIsActive } = state
             state.navIsActive = !navIsActive
-            console.log(state.navIsActive)
         }
     }
 })
