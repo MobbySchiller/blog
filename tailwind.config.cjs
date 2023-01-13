@@ -16,7 +16,7 @@ module.exports = {
       'dark-background': '#151F2C',
       'dark-primary': '#FDFDFD',
       'dark-secondary': '#C5CBD3',
-      'dark-gray': '202023',
+      'dark-gray': '#202023',
       'dark-elements': '#424B57',
       'dark-ref-icons': '#F2BE2D',
       'theme-icon': '#009EDD',

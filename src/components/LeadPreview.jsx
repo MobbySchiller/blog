@@ -17,7 +17,7 @@ const LeadPreview = () => {
                         <span>January 13, 2023</span>
                     </p>
                     <h3 className="py-2 lg:py-6 xl:py-10 text-3xl lg:text-4xl xl:text-5xl font-title">Title</h3>
-                    <p className="text-light-secondary dark:text-dark-secondary md:text-lg lg:text-xl xl:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa temporibus fugiat quam. Delectus modi voluptatum fugit adipisci aliquid rerum, magni debitis cum.</p>
+                    <p className="text-light-secondary dark:text-dark-secondary md:text-lg lg:text-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa temporibus fugiat quam. Delectus modi voluptatum fugit adipisci aliquid rerum, magni debitis cum.</p>
                     <div className="flex pt-4 lg:pt-6 xl:pt-10">
                         <img
                             src="../images/penguin.png"
