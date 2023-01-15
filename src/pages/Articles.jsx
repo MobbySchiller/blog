@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux'
 import Selector from '../components/Selector'
 import Preview from '../components/Preview'
 
 const Articles = () => {
+    const articles = useSelector((state) => state.fetchedData.data)
 
     const categoryOptions = [
         { id: 0, name: 'JavaScript', value: 'javascript' },
@@ -15,6 +17,10 @@ const Articles = () => {
         { id: 3, name: 'Data: od najstarszych', value: 'oldToNew' },
     ]
 
+    const previews = articles.map(article => (
+        <Preview article={article.attributes} />
+    ))
+
     return (
         <>
             <section className="flex flex-col sm:flex-row justify-between my-4">
@@ -22,18 +28,7 @@ const Articles = () => {
                 <Selector name={'Sortuj'} options={sortOptions} />
             </section >
             <section className='w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mx-auto'>
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
-                <Preview />
+                {previews}
             </section>
         </>
     )

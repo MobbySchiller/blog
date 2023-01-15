@@ -3,9 +3,7 @@ import Blog from './components/Blog'
 const App = () => {
 
   return (
-    <>
-      <Blog />
-    </>
+    <Blog />
   )
 }
 

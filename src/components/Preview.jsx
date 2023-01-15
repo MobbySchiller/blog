@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
-const Preview = () => {
+const Preview = ({ article }) => {
+    const { title, description, category, createdAt } = article
 
     return (
         <article className='place-self-center'>
@@ -12,12 +13,12 @@ const Preview = () => {
                         className="rounded-lg"
                     />
                     <p className='py-1 text-light-secondary dark:text-dark-secondary'>
-                        <span className="font-bold">Category</span>
+                        <span className="font-bold">{category}</span>
                         <span> • </span>
                         <span>January 13, 2023</span>
                     </p>
-                    <h3 className="py-2 text-3xl lg:text-4xl font-title">Title</h3>
-                    <p className="pb-4 text-light-secondary dark:text-dark-secondary md:text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa temporibus fugiat quam. Delectus modi voluptatum fugit adipisci aliquid rerum, magni debitis cum, sunt pariatur eligendi cumque quibusdam ab autem.</p>
+                    <h3 className="py-2 text-3xl lg:text-4xl font-title">{title}</h3>
+                    <p className="pb-4 text-light-secondary dark:text-dark-secondary md:text-md">{description}</p>
                 </div>
             </NavLink >
         </article >
