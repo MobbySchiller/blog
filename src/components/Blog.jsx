@@ -14,7 +14,7 @@ const Blog = () => {
     dispatch(setData(data))
 
     return (
-        <div className='w-full min-h-screen bg-light-background dark:bg-dark-background text-light-primary dark:text-dark-primary font-main'>
+        <div className='w-full min-h-screen relative bg-light-background dark:bg-dark-background text-light-primary dark:text-dark-primary font-main'>
             <div className='container mx-auto'>
                 <Header />
                 <Main />

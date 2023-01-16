@@ -18,7 +18,7 @@ const Articles = () => {
     ]
 
     const previews = articles.map(article => (
-        <Preview article={article.attributes} />
+        <Preview key={article.id} article={article.attributes} />
     ))
 
     return (
