@@ -15,7 +15,7 @@ const Blog = () => {
 
     return (
         <div className='w-full min-h-screen relative bg-light-background dark:bg-dark-background text-light-primary dark:text-dark-primary font-main'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto pb-20'>
                 <Header />
                 <Main />
             </div>

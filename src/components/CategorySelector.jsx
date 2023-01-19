@@ -1,20 +1,19 @@
-const Selector = ({ name, options }) => {
+const CategorySelector = ({ options }) => {
 
     const selectorOptions = options.map(option => {
-        const { id, name, value } = option
         return (
-            <option key={id} value={value}>{name}</option>
+            <option key={option} value={option}>{option}</option>
         )
     })
-
 
     return (
         <div className="w-full md:w-1/5 px-3 mb-6 md:mb-0">
             <label className="block tracking-wide text-light-primary dark:text-dark-primary mb-1">
-                {name}
+                Kategoria
             </label>
             <div className="relative">
                 <select className="block appearance-none w-full bg-light-elements dark:bg-dark-elements border border-light-gray dark:border-dark-secondary text-light-primary dark:text-dark-primary py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-theme-icon dark:focus:border-theme-icon">
+                    <option value="all">Wszystkie</option>
                     {selectorOptions}
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-light-primary dark:text-dark-primary">
@@ -25,4 +24,4 @@ const Selector = ({ name, options }) => {
     )
 }
 
-export default Selector
+export default CategorySelector

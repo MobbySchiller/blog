@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom'
+import { parseDate } from './Preview'
 
-const LeadPreview = () => {
+const LeadPreview = ({ article }) => {
+    const { title, description, category, createdAt } = article
+
+    const date = parseDate(createdAt)
 
     return (
         <NavLink to='/article/2'>
@@ -12,12 +16,12 @@ const LeadPreview = () => {
                 />
                 <div>
                     <p className='py-1 sm:py-0 text-light-secondary dark:text-dark-secondary lg:text-lg xl:text-xl'>
-                        <span className="font-bold">Category</span>
+                        <span className="font-bold">{category}</span>
                         <span> • </span>
-                        <span>January 13, 2023</span>
+                        <span>{date}</span>
                     </p>
-                    <h3 className="py-2 lg:py-6 xl:py-10 text-3xl lg:text-4xl xl:text-5xl font-title">Title</h3>
-                    <p className="text-light-secondary dark:text-dark-secondary md:text-lg lg:text-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa temporibus fugiat quam. Delectus modi voluptatum fugit adipisci aliquid rerum, magni debitis cum.</p>
+                    <h3 className="py-2 lg:py-6 xl:py-10 text-3xl lg:text-4xl xl:text-5xl font-title">{title}</h3>
+                    <p className="text-light-secondary dark:text-dark-secondary md:text-lg lg:text-xl ">{description}</p>
                     <div className="flex pt-4 lg:pt-6 xl:pt-10">
                         <img
                             src="../images/penguin.png"
