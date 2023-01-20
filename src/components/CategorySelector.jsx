@@ -1,10 +1,29 @@
-const CategorySelector = ({ options }) => {
+import { useSelector, useDispatch } from 'react-redux'
+import { setCategory } from '../store/selectorsSlice'
 
-    const selectorOptions = options.map(option => {
+const CategorySelector = () => {
+    const articles = useSelector((state) => state.fetchedData.data)
+    const dispatch = useDispatch()
+
+    const getCategories = () => {
+        const categories = articles.map(article => article.attributes.category)
+        const singleCategories = new Set(categories)
+        const result = Array.from(singleCategories)
+        return result
+    }
+
+    const categories = getCategories()
+
+    const selectorOptions = categories.map(category => {
         return (
-            <option key={option} value={option}>{option}</option>
+            <option key={category} value={category}>{category}</option>
         )
     })
+
+    const handleSelector = (event) => {
+        const value = event.target.value
+        dispatch(setCategory({ value }))
+    }
 
     return (
         <div className="w-full md:w-1/5 px-3 mb-6 md:mb-0">
@@ -12,7 +31,10 @@ const CategorySelector = ({ options }) => {
                 Kategoria
             </label>
             <div className="relative">
-                <select className="block appearance-none w-full bg-light-elements dark:bg-dark-elements border border-light-gray dark:border-dark-secondary text-light-primary dark:text-dark-primary py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-theme-icon dark:focus:border-theme-icon">
+                <select
+                    className="block appearance-none w-full bg-light-elements dark:bg-dark-elements border border-light-gray dark:border-dark-secondary text-light-primary dark:text-dark-primary py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-theme-icon dark:focus:border-theme-icon"
+                    onChange={handleSelector}
+                >
                     <option value="all">Wszystkie</option>
                     {selectorOptions}
                 </select>

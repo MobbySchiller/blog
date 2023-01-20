@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const fetchedDataSlice = createSlice({
     name: 'fetchedData',
     initialState: {
-        fetchedData: []
+        data: ''
     },
     reducers: {
         setData: (state, action) => {
