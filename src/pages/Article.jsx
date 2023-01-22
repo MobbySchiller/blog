@@ -13,7 +13,13 @@ const Article = ({ data }) => {
     const date = parseDate(createdAt)
 
     return (
-        <article className="max-w-3xl mx-auto">
+        <article className="max-w-3xl mx-auto p-4">
+            <button
+                class="bg-theme-icon text-white font-bold mb-4 py-2 px-4 rounded"
+                onClick={() => window.history.back()}
+            >
+                Back
+            </button>
             <img
                 src={`http://localhost:1337${image.url}`}
                 alt={image.alt}
@@ -24,8 +30,8 @@ const Article = ({ data }) => {
                 <span> • </span>
                 <span>{date}</span>
             </p>
-            <h2 className="py-2 text-3xl lg:text-5xl font-title">{title}</h2>
-            <p className="pb-4 text-light-secondary dark:text-dark-secondary md:text-md">{content}</p>
+            <h2 className="py-2 text-4xl lg:text-5xl font-title">{title}</h2>
+            <p className="pb-4 text-light-secondary dark:text-dark-secondary md:text-xl">{content}</p>
         </article>
     )
 }
