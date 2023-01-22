@@ -11,6 +11,9 @@ export const parseDate = (createdDate) => {
 const Preview = ({ article }) => {
     const { title, description, category, createdAt } = article
 
+    console.log(article.cover.data[0].attributes.formats.thumbnail.url)
+    const url = article.cover.data[0].attributes.formats.small.url
+
     const date = parseDate(createdAt)
 
     return (
@@ -18,7 +21,7 @@ const Preview = ({ article }) => {
             <NavLink to='/article/1'>
                 <div className="md:max-w-[400px] p-4">
                     <img
-                        src="../images/code.jpg"
+                        src={`http://localhost:1337${url}`}
                         alt=""
                         className="rounded-lg"
                     />

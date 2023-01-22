@@ -9,7 +9,7 @@ const Blog = () => {
     const dispatch = useDispatch()
 
     let { loading, data, error } = useFetch('http://localhost:1337/api/blogs?populate=*')
-    if (loading) return <p>Loading...</p>
+    if (loading) return <p>Loading!</p>
     if (error) return <p>Error!</p>
     dispatch(setData(data))
 
