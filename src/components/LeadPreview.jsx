@@ -1,19 +1,24 @@
 import { NavLink } from 'react-router-dom'
-import { parseDate } from './Preview'
+import { parseDate } from '../scripts/parser'
 
-const LeadPreview = ({ article }) => {
-    const { title, description, category, createdAt } = article
+const LeadPreview = ({ article, id }) => {
+    const { title, description, cover, category, createdAt } = article
 
-    const url = article.cover.data[0].attributes.url
+    const imageAttributes = cover.data[0].attributes
+
+    const image = {
+        url: imageAttributes.url,
+        alt: imageAttributes.name
+    }
 
     const date = parseDate(createdAt)
 
     return (
-        <NavLink to='/article/2'>
+        <NavLink to={`/article/${id}`}>
             <article className="md:flex md:items-start max-w-full md:max-w-7xl mx-auto p-4 xl:px-2">
                 <img
-                    src={`http://localhost:1337${url}`}
-                    alt=""
+                    src={`http://localhost:1337${image.url}`}
+                    alt={image.alt}
                     className="rounded-lg md:w-3/5 md:aspect-auto sm:mr-4"
                 />
                 <div>

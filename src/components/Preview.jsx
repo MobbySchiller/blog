@@ -1,28 +1,25 @@
 import { NavLink } from 'react-router-dom'
+import { parseDate } from '../scripts/parser'
 
-export const parseDate = (createdDate) => {
-    const slicedDate = createdDate.slice(0, 10)
-    const date = new Date(slicedDate)
-    const options = { month: 'long', day: 'numeric', year: 'numeric' }
-    const newDate = new Intl.DateTimeFormat('pl-PL', options).format(date)
-    return newDate
-}
+const Preview = ({ article, id }) => {
+    const { title, description, category, cover, createdAt } = article
 
-const Preview = ({ article }) => {
-    const { title, description, category, createdAt } = article
+    const imageAttributes = cover.data[0].attributes
 
-    console.log(article.cover.data[0].attributes.formats.thumbnail.url)
-    const url = article.cover.data[0].attributes.formats.small.url
+    const image = {
+        url: imageAttributes.formats.small.url,
+        alt: imageAttributes.name
+    }
 
     const date = parseDate(createdAt)
 
     return (
         <article className='place-self-center'>
-            <NavLink to='/article/1'>
+            <NavLink to={`/article/${id}`}>
                 <div className="md:max-w-[400px] p-4">
                     <img
-                        src={`http://localhost:1337${url}`}
-                        alt=""
+                        src={`http://localhost:1337${image.url}`}
+                        alt={image.alt}
                         className="rounded-lg"
                     />
                     <p className='py-1 text-light-secondary dark:text-dark-secondary'>
