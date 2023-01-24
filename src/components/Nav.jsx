@@ -22,7 +22,7 @@ const Nav = () => {
 
     return (
         <nav
-            className={`absolute sm:static sm:flex justify-between items-center bg-light-background dark:bg-dark-background w-full py-2 border-y border-light-gray dark:border-dark-secondary`}
+            className={`absolute sm:static sm:flex justify-between items-center bg-light-background dark:bg-dark-background w-full py-2 border-y border-light-gray dark:border-dark-secondary z-50`}
             style={{ top: `${isActive ? '64px' : '-200px'}` }}>
             <ul className='flex flex-col items-center sm:flex-row mb-4 sm:mb-0'>
                 {links}
