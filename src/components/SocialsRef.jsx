@@ -1,15 +1,23 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 const SocialsRef = () => {
     return (
         <div className='text-2xl text-light-ref-icons dark:text-dark-ref-icons'>
-            <a href='https://kburzynski.com/' className='sm:mx-3'>
+            <a href='#' className='sm:mx-3'>
                 <FontAwesomeIcon icon={faGlobe} />
             </a>
-            <a href='https://www.linkedin.com/in/krzysztof-burzy%C5%84ski-86bb79190/' className='sm:mx-3'>
-                <FontAwesomeIcon icon={faLinkedin} />
+            <a href='#' className='sm:mx-3'>
+                <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a href='#' className='sm:mx-3'>
+                <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a href='#' className='sm:mx-3'>
+                <FontAwesomeIcon icon={faYoutube} />
             </a>
         </div>
     )
