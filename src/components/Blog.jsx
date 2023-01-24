@@ -6,6 +6,8 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 
+export const API = 'http://localhost:1337'
+
 const Blog = () => {
     const dispatch = useDispatch()
 

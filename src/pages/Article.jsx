@@ -1,4 +1,6 @@
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { parseDate } from '../scripts/parser'
+import { API } from '../components/Blog'
 
 const Article = ({ data }) => {
     const { title, category, content, createdAt, author, cover, avatar } = data
@@ -27,7 +29,7 @@ const Article = ({ data }) => {
                 Back
             </button>
             <img
-                src={`http://localhost:1337${coverImg.url}`}
+                src={`${API}${coverImg.url}`}
                 alt={coverImg.alt}
                 className="w-full rounded-lg"
             />
@@ -37,10 +39,10 @@ const Article = ({ data }) => {
                 <span>{date}</span>
             </p>
             <h2 className="py-4 text-4xl lg:text-5xl font-title">{title}</h2>
-            <p className="pb-4 text-light-secondary dark:text-dark-secondary md:text-xl text-justify">{content}</p>
+            <ReactMarkdown className="pb-4 text-light-secondary dark:text-dark-secondary md:text-xl text-justify">{content}</ReactMarkdown>
             <div className="flex pt-2">
                 <img
-                    src={`http://localhost:1337${authorImg.url}`}
+                    src={`${API}${authorImg.url}`}
                     alt=""
                     width={50}
                     height={50}

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { parseDate } from '../scripts/parser'
+import { API } from './Blog'
 
 const Preview = ({ article, id }) => {
     const { title, description, category, cover, createdAt } = article
@@ -17,7 +18,7 @@ const Preview = ({ article, id }) => {
         <NavLink to={`/article/${id}`}>
             <article className="md:max-w-[400px] p-4">
                 <img
-                    src={`http://localhost:1337${image.url}`}
+                    src={`${API}${image.url}`}
                     alt={image.alt}
                     className="rounded-lg"
                 />
