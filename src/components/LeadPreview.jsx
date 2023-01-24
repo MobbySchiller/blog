@@ -2,13 +2,19 @@ import { NavLink } from 'react-router-dom'
 import { parseDate } from '../scripts/parser'
 
 const LeadPreview = ({ article, id }) => {
-    const { title, description, cover, category, createdAt } = article
+    const { title, description, cover, category, author, createdAt, avatar } = article
 
-    const imageAttributes = cover.data[0].attributes
+    const coverImgAttributes = cover.data[0].attributes
+    const authorImgAttributes = avatar.data[0].attributes
 
-    const image = {
-        url: imageAttributes.url,
-        alt: imageAttributes.name
+    const coverImg = {
+        url: coverImgAttributes.url,
+        alt: coverImgAttributes.name
+    }
+
+    const authorImg = {
+        url: authorImgAttributes.url,
+        alt: authorImgAttributes.name
     }
 
     const date = parseDate(createdAt)
@@ -17,8 +23,8 @@ const LeadPreview = ({ article, id }) => {
         <NavLink to={`/article/${id}`}>
             <article className="md:flex md:items-start max-w-full md:max-w-7xl mx-auto p-4 xl:px-2">
                 <img
-                    src={`http://localhost:1337${image.url}`}
-                    alt={image.alt}
+                    src={`http://localhost:1337${coverImg.url}`}
+                    alt={coverImg.alt}
                     className="rounded-lg md:w-3/5 md:aspect-auto sm:mr-4"
                 />
                 <div>
@@ -27,17 +33,19 @@ const LeadPreview = ({ article, id }) => {
                         <span> • </span>
                         <span>{date}</span>
                     </p>
-                    <h3 className="py-2 lg:py-6 xl:py-10 text-3xl lg:text-4xl xl:text-5xl font-title">{title}</h3>
+                    <h3 className="py-2 lg:py-4 xl:py-6 text-3xl lg:text-4xl xl:text-5xl font-title">{title}</h3>
                     <p className="text-light-secondary dark:text-dark-secondary md:text-lg lg:text-xl ">{description}</p>
-                    <div className="flex pt-4 lg:pt-6 xl:pt-10">
+                    <div className="flex pt-4">
                         <img
-                            src="../images/penguin.png"
-                            alt=""
+                            src={`http://localhost:1337${authorImg.url}`}
+                            alt={authorImg.alt}
+                            width={50}
+                            height={50}
                             className="rounded-full mr-2"
                         />
                         <div className='lg:text-lg xl:text-xl'>
-                            <p>Author</p>
-                            <p className="font-bold">John Doe</p>
+                            <p>Autor</p>
+                            <p className="font-bold">{author}</p>
                         </div>
                     </div>
                 </div>
