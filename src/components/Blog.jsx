@@ -1,6 +1,8 @@
 import useFetch from '../hooks/useFetch'
 import { useDispatch } from 'react-redux'
 import { setData } from '../store/fetchedDataSlice'
+import Loader from '../pages/Loader'
+import Error from '../pages/Error'
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
@@ -9,8 +11,8 @@ const Blog = () => {
     const dispatch = useDispatch()
 
     let { loading, data, error } = useFetch('http://localhost:1337/api/blogs?populate=*')
-    if (loading) return <p>Loading!</p>
-    if (error) return <p>Error!</p>
+    if (loading) return <Loader />
+    if (error) return <Error />
     dispatch(setData(data))
 
     return (

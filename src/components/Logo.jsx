@@ -5,14 +5,14 @@ const Logo = () => {
 
     return (
         <h1
-            className="h-14 sm:h-16 lg:h-22 text-5xl lg:text-6xl text-center font-title sm:my-12"
+            className="h-14 sm:h-20 lg:h-26 text-5xl lg:text-6xl text-center font-title sm:my-12"
             style={{
                 backgroundImage: 'linear-gradient(to bottom, #75B845 31%, #F2BE2D 31%, #F2BE2D 41%, #E09434 41%, #E09434 51%, #C55152 51%, #C55152 61%, #934E84 61%, #934E84 71%, #009EDD 71%)',
                 color: 'transparent',
                 WebkitBackgroundClip: 'text',
                 WebkitTextStroke: `1px ${isDark ? '' : '#313134'}`
             }}
-        > O JavaScript
+        > O Apple
         </h1 >
     )
 }
